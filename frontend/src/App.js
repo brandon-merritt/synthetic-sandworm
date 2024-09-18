@@ -3,29 +3,21 @@ import './App.css';
 import RegisterForm from './Components/RegisterForm/RegisterForm';
 import JournalEntry from './Components/JournalEntry/JournalEntry';
 import Prompt from './Components/Prompt/Prompt';
+import LoginPage from './Components/Login/Login';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './Pages/homepage/homepage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <RegisterForm />
-        <JournalEntry />
-        <Prompt />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage/>} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

@@ -7,7 +7,6 @@ const app = express();
 const authRoutes = require('./routes/auth'); // Authentication routes
 const journalRoutes = require('./routes/journal'); // Journal routes
 const promptsRoutes = require('./routes/prompts'); // Prompts routes
-const exercisesRoutes = require('./routes/exerciseRoutes'); // Mental exercises routes
 
 // Middleware
 app.use(cors());
@@ -27,7 +26,7 @@ mongoose.connect('mongodb://localhost:27017/myapp', {
 app.use('/api/users', authRoutes);
 app.use('/api/journal', journalRoutes);
 app.use('/api/prompts', promptsRoutes);
-app.use('/api/exercises', exercisesRoutes);
+
 
 // Root route
 app.get('/', (req, res) => {
